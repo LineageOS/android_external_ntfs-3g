@@ -3597,7 +3597,7 @@ static int set_fuseblk_options(char **parsed_options)
 		blksize = pagesize;
 	
 	snprintf(options, sizeof(options), ",blkdev,blksize=%u", blksize);
-	if (ntfs_strappend(parsed_options, options))
+	if (ntfs_strinsert(parsed_options, options))
 		return -1;
 	return 0;
 }
