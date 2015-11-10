@@ -72,7 +72,7 @@ LOCAL_C_INCLUDES := $(common_c_includes) $(LOCAL_PATH)/ntfsprogs
 LOCAL_CFLAGS := $(common_cflags) -Dmain=fsck_ntfs3g_main
 LOCAL_MODULE := libntfs3g_fsck_static
 LOCAL_MODULE_TAGS := eng
-LOCAL_STATIC_LIBRARIES := libext2_uuid libfuse libntfs-3g
+LOCAL_STATIC_LIBRARIES := libext2_uuid libfuse_static libntfs-3g
 include $(BUILD_STATIC_LIBRARY)
 
 
