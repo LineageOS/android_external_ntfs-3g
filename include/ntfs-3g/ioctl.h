@@ -24,7 +24,7 @@
 #ifndef IOCTL_H
 #define IOCTL_H
 
-int ntfs_ioctl(ntfs_inode *ni, int cmd, void *arg,
+int ntfs_ioctl(ntfs_inode *ni, unsigned int cmd, void *arg,
                         unsigned int flags, void *data);
 
 #endif /* IOCTL_H */
