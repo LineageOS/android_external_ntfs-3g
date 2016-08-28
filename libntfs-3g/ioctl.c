@@ -359,7 +359,7 @@ free_out:
 
 #endif /* FITRIM && BLKDISCARD */
 
-int ntfs_ioctl(ntfs_inode *ni, int cmd, void *arg __attribute__((unused)),
+int ntfs_ioctl(ntfs_inode *ni, unsigned int cmd, void *arg __attribute__((unused)),
 			unsigned int flags __attribute__((unused)), void *data)
 {
 	int ret = 0;
