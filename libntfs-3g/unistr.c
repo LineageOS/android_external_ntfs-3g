@@ -1332,7 +1332,7 @@ void ntfs_upcase_table_build(ntfschar *uc, u32 uc_len)
 		{ 0xa77f, 0xa787, -0x1, 2, 6, 1 },
 		{ 0xa78c, 0xa78c, -0x1, 2, 6, 1 },
 							/* end mark */
-		{ 0 }
+		{ 0, 0, 0, 0, 0, 0 }
 	} ;
 
 	int i, r;
