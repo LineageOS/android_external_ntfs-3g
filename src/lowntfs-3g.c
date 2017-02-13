@@ -3827,25 +3827,26 @@ static fuse_fstype load_fuse_module(void)
 	struct stat st;
 	pid_t pid;
 	const char *cmd = "/sbin/modprobe";
+	char *env = (char*)NULL;
 	struct timespec req = { 0, 100000000 };   /* 100 msec */
 	fuse_fstype fstype;
-        
+
 	if (!stat(cmd, &st) && !geteuid()) {
 		pid = fork();
 		if (!pid) {
-			execl(cmd, cmd, "fuse", NULL);
+			execle(cmd, cmd, "fuse", NULL, &env);
 			_exit(1);
 		} else if (pid != -1)
 			waitpid(pid, NULL, 0);
 	}
-        
+
 	for (i = 0; i < 10; i++) {
-		/* 
+		/*
 		 * We sleep first because despite the detection of the loaded
-		 * FUSE kernel module, fuse_mount() can still fail if it's not 
+		 * FUSE kernel module, fuse_mount() can still fail if it's not
 		 * fully functional/initialized. Note, of course this is still
 		 * unreliable but usually helps.
-		 */  
+		 */
 		nanosleep(&req, NULL);
 		fstype = get_fuse_fstype();
 		if (fstype != FSTYPE_NONE)
