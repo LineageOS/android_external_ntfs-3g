@@ -80,7 +80,7 @@ mkntfs_src_files := ntfsprogs/attrdef.c ntfsprogs/boot.c ntfsprogs/sd.c ntfsprog
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(mkntfs_src_files)
 LOCAL_C_INCLUDES := $(common_c_includes) $(LOCAL_PATH)/ntfsprogs \
-			external/e2fsprogs/lib
+			$(LOCAL_PATH) external/e2fsprogs/lib
 LOCAL_CFLAGS := $(common_cflags)
 LOCAL_MODULE := mkfs.ntfs
 LOCAL_MODULE_TAGS := eng
@@ -90,7 +90,7 @@ include $(BUILD_EXECUTABLE)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(mkntfs_src_files)
 LOCAL_C_INCLUDES := $(common_c_includes) $(LOCAL_PATH)/ntfsprogs \
-			external/e2fsprogs/lib
+			$(LOCAL_PATH) external/e2fsprogs/lib
 LOCAL_CFLAGS := $(common_cflags) -Dmain=mkfs_ntfs3g_main
 LOCAL_MODULE := libntfs3g_mkfs_main
 LOCAL_MODULE_TAGS := eng
