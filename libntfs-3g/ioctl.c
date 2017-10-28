@@ -56,6 +56,7 @@
 
 #ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
+#include <sys/sysmacros.h>
 #endif
 
 #ifdef HAVE_SYS_STAT_H

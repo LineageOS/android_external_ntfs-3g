@@ -71,6 +71,7 @@
 
 #ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
+#include <sys/sysmacros.h>
 #endif
 #ifdef HAVE_SYS_MKDEV_H
 #include <sys/mkdev.h>
