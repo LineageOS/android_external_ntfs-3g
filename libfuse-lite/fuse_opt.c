@@ -278,6 +278,15 @@ static int process_real_option_group(struct fuse_opt_context *ctx, char *opts)
 #endif /* __SOLARIS__ */
             {
             sep = strchr(opts, ',');
+#ifdef ANDROID
+            if (!strncmp(opts, "fsname=/dev/block/vold/public:", 30)) {
+                if (sep && *(sep - 1) == '\\') {
+                    sep--;
+                    memmove(sep, sep + 1, strlen(sep));
+                }
+                sep = strchr(sep + 1, ',');
+            }
+#endif
             if (sep)
                 *sep = '\0';
         }
