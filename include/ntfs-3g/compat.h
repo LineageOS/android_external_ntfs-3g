@@ -75,5 +75,11 @@ extern char *strsep(char **stringp, const char *delim);
 
 #endif /* defined WINDOWS */
 
+#ifdef __ANDROID__
+#define S_IREAD   0400    /* Read by owner.  */
+#define S_IWRITE  0200    /* Write by owner.  */
+#define S_IEXEC   0100    /* Execute by owner.  */
+#endif
+
 #endif /* defined _NTFS_COMPAT_H */
 
