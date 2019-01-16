@@ -28,7 +28,7 @@ cc_defaults {
     tags: ["optional"],
 }
 
-cc_library_shared {
+cc_library {
     name: "libfuse-lite",
 
     srcs: ["libfuse-lite/*.c"],
@@ -37,7 +37,7 @@ cc_library_shared {
     export_include_dirs: ["include/fuse-lite"],
 }
 
-cc_library_shared {
+cc_library {
     name: "libntfs-3g",
 
     srcs: [
@@ -119,6 +119,64 @@ cc_binary {
     ],
     defaults: ["ntfs-3g_defaults"],
     shared_libs: [
+        "libfuse-lite",
+        "libntfs-3g",
+    ],
+}
+
+// Libraries for recovery
+
+cc_library_static {
+    name: "libntfs_utils",
+    defaults: ["ntfs-3g_defaults"],
+    srcs: [
+        "ntfsprogs/utils.c",
+    ],
+    cflags: ["-Dmain=fsck_ntfs_main"],
+    static_libs: [
+        "libfuse-lite",
+        "libntfs-3g",
+    ],
+}
+
+cc_library_static {
+    name: "libntfs_fsck",
+    defaults: ["ntfs-3g_defaults"],
+    srcs: [
+        "ntfsprogs/ntfsfix.c",
+    ],
+    cflags: ["-Dmain=fsck_ntfs_main"],
+    static_libs: [
+        "libfuse-lite",
+        "libntfs-3g",
+    ],
+}
+
+cc_library_static {
+    name: "libntfs_mkfs",
+    defaults: ["ntfs-3g_defaults"],
+    srcs: [
+        "ntfsprogs/attrdef.c",
+        "ntfsprogs/boot.c",
+        "ntfsprogs/mkntfs.c",
+        "ntfsprogs/sd.c",
+    ],
+    cflags: ["-Dmain=mkfs_ntfs_main"],
+    static_libs: [
+        "libfuse-lite",
+        "libntfs-3g",
+    ],
+}
+
+cc_library_static {
+    name: "libntfs_mount",
+    defaults: ["ntfs-3g_defaults"],
+    srcs: [
+        "src/ntfs-3g.c",
+        "src/ntfs-3g_common.c",
+    ],
+    cflags: ["-Dmain=mount_ntfs_main"],
+    static_libs: [
         "libfuse-lite",
         "libntfs-3g",
     ],
