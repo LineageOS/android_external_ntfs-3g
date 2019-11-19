@@ -21,6 +21,7 @@ cc_defaults {
 
     cflags: [
         "-Wno-error",
+        "-Wno-address-of-packed-member",
         "-D_LARGEFILE_SOURCE",
         "-D_FILE_OFFSET_BITS=64",
         "-DHAVE_CONFIG_H",
