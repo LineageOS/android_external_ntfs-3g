@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9afc488_1a11e839",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-10-03T19:08:11Z",
+      "side": 1,
+      "message": "Good to push, tested on 20.0 on nash with an ntfs usb drive (enforcing selinux too)",
+      "revId": "9e12a56b9815ace92e5187e1589d67b5b22149a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
