@@ -34,6 +34,7 @@ cc_library_shared {
 
     srcs: ["libfuse-lite/*.c"],
     export_include_dirs: ["include/fuse-lite"],
+    product_specific: true,
 }
 
 cc_library_shared {
@@ -75,6 +76,7 @@ cc_library_shared {
         "libntfs-3g/xattrs.c",
     ],
     export_include_dirs: ["include/ntfs-3g"],
+    product_specific: true,
 }
 
 cc_binary {
@@ -89,6 +91,7 @@ cc_binary {
         "libfuse-lite",
         "libntfs-3g",
     ],
+    product_specific: true,
 }
 
 cc_binary {
@@ -106,6 +109,7 @@ cc_binary {
         "libfuse-lite",
         "libntfs-3g",
     ],
+    product_specific: true,
 }
 
 cc_binary {
@@ -120,4 +124,5 @@ cc_binary {
         "libfuse-lite",
         "libntfs-3g",
     ],
+    product_specific: true,
 }
