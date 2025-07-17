@@ -343,7 +343,7 @@
 #define PACKAGE_NAME "ntfs-3g"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "ntfs-3g 2022.5.17"
+#define PACKAGE_STRING "ntfs-3g 2022.10.3"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "ntfs-3g"
@@ -352,7 +352,7 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "2022.5.17"
+#define PACKAGE_VERSION "2022.10.3"
 
 /* POSIX ACL support */
 /* #undef POSIXACLS */
@@ -383,7 +383,7 @@
 
 
 /* Version number of package */
-#define VERSION "2022.5.17"
+#define VERSION "2022.10.3"
 
 /* Define to 1 if this is a Windows OS */
 /* #undef WINDOWS */
